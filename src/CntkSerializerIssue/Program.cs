@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CNTK;
 using static CNTK.CNTKLib;
@@ -14,16 +15,19 @@ namespace CntkSerializerIssue
         static void Main(string[] args)
         {
             var d = DeviceDescriptor.CPUDevice;
+            var repositoryRoot = @"..\..\..\..\..\";
 
             var channelNameToMapFilePath = new Dictionary<string, string>
             {
-                { "Channel1", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel1.map" },
-                { "Channel2", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel2.map" },
-                { "Channel3", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel3.map" },
-                { "Channel4", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel4.map" },
+                { "Channel1", Path.Combine(repositoryRoot, @"mapfiles\TrainChannel1.map") },
+                { "Channel2", Path.Combine(repositoryRoot, @"mapfiles\TrainChannel2.map") },
+                { "Channel3", Path.Combine(repositoryRoot, @"mapfiles\TrainChannel3.map") },
+                { "Channel4", Path.Combine(repositoryRoot, @"mapfiles\TrainChannel4.map") },
             };
 
-            var ctfFilePath = @"K:\Git\CntkSerializerIssue\mapfiles\TrainTargets.ctf";
+            System.Console.WriteLine(Directory.GetCurrentDirectory());
+
+            var ctfFilePath = Path.Combine(repositoryRoot, @"mapfiles\TrainTargets.ctf");
             var outputShape = 3;
             var maxSweeps = int.MaxValue;
             uint minibatchSize = 32;
@@ -43,6 +47,7 @@ namespace CntkSerializerIssue
                 // Stop training once max epochs is reached.
                 if (minibatchData.empty())
                 {
+                    System.Console.WriteLine("Completed sweeps");
                     break;
                 }
 
