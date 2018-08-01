@@ -63,7 +63,7 @@ namespace CntkSerializerIssue
             {
                 MaxSweeps = (uint)maxEpochsOrSweeps,
             };
-            
+
             return CNTKLib.CreateCompositeMinibatchSource(config);
         }
 
