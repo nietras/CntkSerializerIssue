@@ -20,13 +20,13 @@ namespace CntkSerializerIssue
 
             var channelNameToMapFilePath = new Dictionary<string, string>
             {
-                { "Channel1", "" },
-                { "Channel2", "" },
-                { "Channel3", "" },
-                { "Channel4", "" },
+                { "Channel1", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel1.map" },
+                { "Channel2", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel2.map" },
+                { "Channel3", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel3.map" },
+                { "Channel4", @"K:\Git\CntkSerializerIssue\mapfiles\TrainChannel4.map" },
             };
 
-            var ctfFilePath = "";
+            var ctfFilePath = @"K:\Git\CntkSerializerIssue\mapfiles\TrainTargets.ctf";
             var outputShape = 3;
             var maxSweeps = int.MaxValue;
             uint minibatchSize = 32;
