@@ -16,7 +16,7 @@ namespace CntkSerializerIssue
 
         static void Main(string[] args)
         {
-            var d = DeviceDescriptor.UseDefaultDevice(); //DeviceDescriptor.CPUDevice;
+            var d = DeviceDescriptor.CPUDevice; //DeviceDescriptor.UseDefaultDevice();
 
             var channelNameToMapFilePath = new Dictionary<string, string>
             {

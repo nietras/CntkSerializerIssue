@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CntkSerializerIssue", "CntkSerializerIssue.csproj", "{E24B7C5B-A922-45C8-B715-E2B5C859BF2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CntkSerializerIssue", "src\CntkSerializerIssue\CntkSerializerIssue.csproj", "{E24B7C5B-A922-45C8-B715-E2B5C859BF2A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C5DA0CE-F5AC-4C06-8E74-5AC46EB14B17}"
 	ProjectSection(SolutionItems) = preProject
