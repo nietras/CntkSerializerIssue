@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CNTK;
 using static CNTK.CNTKLib;
 
@@ -16,7 +13,7 @@ namespace CntkSerializerIssue
 
         static void Main(string[] args)
         {
-            var d = DeviceDescriptor.CPUDevice; //DeviceDescriptor.UseDefaultDevice();
+            var d = DeviceDescriptor.UseDefaultDevice();
 
             var channelNameToMapFilePath = new Dictionary<string, string>
             {
