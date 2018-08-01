@@ -27,7 +27,7 @@ namespace CntkSerializerIssue
 
             var ctfFilePath = Path.Combine(repositoryRoot, @"mapfiles\TrainTargets.ctf");
             var outputShape = 3;
-            var maxSweeps = 2000;
+            var maxSweeps = int.MaxValue;
             uint minibatchSize = 32;
 
             var source = CreateTrainMinibatchSource(channelNameToMapFilePath, ctfFilePath, outputShape, maxSweeps);
@@ -51,7 +51,7 @@ namespace CntkSerializerIssue
                 // Stop training once max epochs is reached.
                 if (minibatchData.empty())
                 {
-                    System.Console.WriteLine("Completed sweeps");
+                    System.Console.WriteLine($"Completed all {sweeps} sweeps");
                     break;
                 }
             }
