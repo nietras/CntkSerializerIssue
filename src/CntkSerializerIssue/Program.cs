@@ -25,8 +25,6 @@ namespace CntkSerializerIssue
                 { "Channel4", Path.Combine(repositoryRoot, @"mapfiles\TrainChannel4.map") },
             };
 
-            System.Console.WriteLine(Directory.GetCurrentDirectory());
-
             var ctfFilePath = Path.Combine(repositoryRoot, @"mapfiles\TrainTargets.ctf");
             var outputShape = 3;
             var maxSweeps = int.MaxValue;
