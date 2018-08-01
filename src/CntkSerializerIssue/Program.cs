@@ -31,6 +31,8 @@ namespace CntkSerializerIssue
             uint minibatchSize = 32;
 
             var source = CreateTrainMinibatchSource(channelNameToMapFilePath, ctfFilePath, outputShape, maxSweeps);
+            var channelNameToFeaturesStreamInfo = channelNameToMapFilePath
+                .ToDictionary(p => p.Key, p => source.StreamInfo(p.Key + FeaturesName));
             var targetStreamInfoName = source.StreamInfo(TargetsName);
             var sweeps = 0;
 
@@ -38,8 +40,10 @@ namespace CntkSerializerIssue
             {
                 var minibatchData = source.GetNextMinibatch(minibatchSize, d);
                 var targets = minibatchData[targetStreamInfoName];
+                var channelNameToChannelData = channelNameToFeaturesStreamInfo
+                    .ToDictionary(p => p.Key, p => minibatchData[p.Value]);
 
-                if(targets.sweepEnd)
+                if (targets.sweepEnd)
                 {
                     if (sweeps % 1000 == 0)
                     {
