@@ -13,7 +13,7 @@ namespace CntkSerializerIssue
 
         static void Main(string[] args)
         {
-            var d = DeviceDescriptor.UseDefaultDevice();
+            var d = DeviceDescriptor.CPUDevice;
 
             var channelNameToMapFilePath = new Dictionary<string, string>
             {
@@ -29,9 +29,15 @@ namespace CntkSerializerIssue
             uint minibatchSize = 32;
 
             var source = CreateTrainMinibatchSource(channelNameToMapFilePath, ctfFilePath, outputShape, maxSweeps);
+            var sweeps = 0;
 
             while (true)
             {
+                if(sweeps % 1000 == 0)
+                {
+                    System.Console.WriteLine("Current sweep: " + sweeps);
+                }
+
                 var minibatchData = source.GetNextMinibatch(minibatchSize, d);
 
                 // Stop training once max epochs is reached.
@@ -39,6 +45,8 @@ namespace CntkSerializerIssue
                 {
                     break;
                 }
+
+                sweeps++;
             }
         }
 

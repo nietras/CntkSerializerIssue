@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CntkSerializationIssue2")]
+[assembly: AssemblyTitle("CntkSerializerIssue")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CntkSerializationIssue2")]
+[assembly: AssemblyProduct("CntkSerializerIssue")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2af4a77e-de92-4def-9d05-34fe05b832b4")]
+[assembly: Guid("5fc59542-73ee-46df-917b-9ee793b0e269")]
 
 // Version information for an assembly consists of the following four values:
 //
